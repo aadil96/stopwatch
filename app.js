@@ -24,6 +24,7 @@ function switchBtn(btn, disabled = true) {
     }
 }
 
+// Begin timer
 function startTimer() {
     switchBtn(startBtn);
     switchBtn(stopBtn, false);
@@ -41,12 +42,14 @@ function startTimer() {
     }, 1000);
 }
 
+// Pause/Stop timer
 function pauseTimer() {
     switchBtn(stopBtn);
     switchBtn(startBtn, false);
     clearInterval(interval);
 }
 
+// Reset to default settings
 function resetTimer() {
     clearInterval(interval);
     switchBtn(startBtn, false);
@@ -58,6 +61,7 @@ function resetTimer() {
     secondsSpan.textContent = "00";
 }
 
+// Trigger event on button click
 startBtn.addEventListener("click", startTimer);
 
 stopBtn.addEventListener("click", pauseTimer);
